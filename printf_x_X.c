@@ -1,7 +1,7 @@
 #include "printf.h"
 #include "../libft/libft.h"
 
-int	ft_hex_len(unsigned	int num)
+int	pf_hexlen(unsigned	int num)
 {
 	int	len;
 
@@ -40,6 +40,6 @@ int	format_x_X(unsigned int num, const char format)
 	if (num == 0)
 		return (write(1, "0", 1));
 	else
-		ft_put_hex(num, format);
-	return (ft_hex_len(num));
+		pf_puthex(num, format);
+	return (pf_hexlen(num));
 }

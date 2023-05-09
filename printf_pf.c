@@ -14,6 +14,7 @@ int	pf_wnum_len(unsigned int wnum)
 	}
 	return (len);
 }
+
 void	pf_putnbr(long int nb)
 {
 	if (nb == -2147483648)
