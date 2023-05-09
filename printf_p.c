@@ -1,5 +1,4 @@
-#include "printf.h"
-#include "../Libft/libft.h"
+#include "ft_printf.h"
 
 // int	pf_ptrlen(uintptr_t num)
 // {
@@ -18,8 +17,8 @@ void	pf_putptr(uintptr_t num)
 {
 	if (num >= 16)
 	{
-		ft_put_ptr(num / 16);
-		ft_put_ptr(num % 16); 
+		pf_putptr(num / 16);
+		pf_putptr(num % 16); 
 	}
 	else
 	{

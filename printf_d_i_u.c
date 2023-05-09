@@ -1,8 +1,7 @@
-#include "printf.h"
-#include "../libft/libft.h"
+#include "ft_printf.h"
 #include <stdlib.h>
 
-int	format_d_i(long int n)
+int	format_d_i(int n)
 {
 	pf_putnbr(n);
 	return (pf_wnum_len(n));
@@ -37,8 +36,8 @@ int	format_d_i(long int n)
 
 int	format_u(unsigned int n)
 {
-	ft_putnbr((unsigned int)n);
-	return (num_len((unsigned int)n));
+	pf_putnbr((unsigned int)n);
+	return (pf_wnum_len((unsigned int)n));
 	// int		wn_len;
 	// char	*wnum;
 

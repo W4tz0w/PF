@@ -1,4 +1,5 @@
-#include "printf.h"
+#include <stdio.h>
+#include "ft_printf.h"
 
 int	pf_print_c(int c)
 {
@@ -42,7 +43,7 @@ int	pf_formats(va_list args, const char format)
 	else if (format == 'p')
 		len += format_p(va_arg(args, unsigned long long));
 	else if (format == 'd' || format == 'i')
-		len += format_d_i(va_arg(args, long int));
+		len += format_d_i(va_arg(args, int));
 	else if (format == 'u')
 		len += format_u(va_arg(args, unsigned int));
 	else if (format == 'x' || format == 'X')
@@ -63,6 +64,7 @@ int	ft_printf(const char *input, ...)
 	va_start(args, input);
 	while (input[i])
 	{
+		//printf("wtf is this : %d\n", len);
 		if (input[i] == '%')
 		{
 			len += pf_formats(args, input[i + 1]);
@@ -73,13 +75,26 @@ int	ft_printf(const char *input, ...)
 		i++;
 	}
 	va_end(args);
+	printf("LEN %d\n", len);
 	return (len);
 }
+
 
 int		main(void)
 {
 	char	*name = "Enzo le plus beau";
 	
-	ft_printf("salut %s, ca roule comme tu veux?", name);
+	ft_printf("int test = %i\n", -1);
+	printf("original printf = %i\n",-1);
+	/*
+	ft_printf("salut %s, ca roule comme tu veux?\n", name);
+	ft_printf("hexa test %x\n", 42);
+	ft_printf("ptr test = %p\n", name);
+	printf("%p\n", name);
+	ft_printf("HEXA test = %X\n", 367);
+	ft_printf("char test = %c\n", 'G');
+	ft_printf("unsigned int test = %u\n", -365222);
+	printf("%u\n", -365222);
+	ft_printf("");*/
 	return (0);
 }

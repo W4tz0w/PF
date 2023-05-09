@@ -1,5 +1,4 @@
-#include "printf.h"
-#include "../libft/libft.h"
+#include "ft_printf.h"
 
 int	pf_hexlen(unsigned	int num)
 {
