@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 01:55:42 by daddy_cool        #+#    #+#             */
-/*   Updated: 2023/05/11 01:55:43 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2023/05/11 02:35:17 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	pf_putptr(uintptr_t num)
 	if (num >= 16)
 	{
 		pf_putptr(num / 16);
-		pf_putptr(num % 16); 
+		pf_putptr(num % 16);
 	}
 	else
 	{
@@ -31,7 +31,7 @@ void	pf_putptr(uintptr_t num)
 int	format_p(unsigned long long ptr)
 {
 	int	len;
-	
+
 	len = write(1, "0x", 2);
 	if (ptr == 0)
 		len += write(1, "0", 1);

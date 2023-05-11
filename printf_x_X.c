@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 01:55:45 by daddy_cool        #+#    #+#             */
-/*   Updated: 2023/05/11 01:55:46 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2023/05/11 02:36:05 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	pf_puthex(unsigned int num, const char format)
 	}
 }
 
-int	format_x_X(unsigned int num, const char format)
+int	format_hex(unsigned int num, const char format)
 {
 	if (num == 0)
 		return (write(1, "0", 1));
