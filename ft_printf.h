@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/11 01:55:57 by daddy_cool        #+#    #+#             */
+/*   Updated: 2023/05/11 02:31:47 by daddy_cool       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # define FORMATS "cspdiuxX%"
@@ -21,5 +33,7 @@ int	format_p(unsigned long long ptr);
 void	ft_putchar_fd(char c, int fd);
 int	format_d_i(int n);
 int	format_u(unsigned int n);
+int	pf_wunum_len(unsigned int wnum);
+void	pf_putunbr(unsigned int nb);
 
 #endif

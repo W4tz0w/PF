@@ -19,5 +19,7 @@ void	pf_putptr(uintptr_t num);
 int	format_p(unsigned long long ptr);
 int	format_d_i(long int n);
 int	format_u(unsigned int n);
+int	pf_wunum_len(unsigned int wnum);
+void	pf_putunbr(unsigned int nb);
 
 #endif

@@ -1,17 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   printf_p.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/11 01:55:42 by daddy_cool        #+#    #+#             */
+/*   Updated: 2023/05/11 01:55:43 by daddy_cool       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
-
-// int	pf_ptrlen(uintptr_t num)
-// {
-// 	int	len;
-
-// 	len = 0;
-// 	while (num != 0)
-// 	{
-// 		len++;
-// 		num = num / 16;
-// 	}
-// 	return (len);
-// }
 
 void	pf_putptr(uintptr_t num)
 {
@@ -44,7 +43,6 @@ int	format_p(unsigned long long ptr)
 			len++;
 			ptr = ptr / 16;
 		}
-		// len += pf_ptrlen(ptr);
 	}
 	return (len);
 }

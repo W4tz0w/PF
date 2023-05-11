@@ -1,4 +1,15 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   printf.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/11 01:56:01 by daddy_cool        #+#    #+#             */
+/*   Updated: 2023/05/11 01:56:02 by daddy_cool       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	pf_print_c(int c)
@@ -50,6 +61,8 @@ int	pf_formats(va_list args, const char format)
 		len += format_x_X(va_arg(args, unsigned int), format);
 	else if (format == '%')
 		len += nonformat();
+	else
+		len--;
 	return (len);
 }
 
@@ -64,7 +77,6 @@ int	ft_printf(const char *input, ...)
 	va_start(args, input);
 	while (input[i])
 	{
-		//printf("wtf is this : %d\n", len);
 		if (input[i] == '%')
 		{
 			len += pf_formats(args, input[i + 1]);
@@ -75,18 +87,23 @@ int	ft_printf(const char *input, ...)
 		i++;
 	}
 	va_end(args);
-	printf("LEN %d\n", len);
 	return (len);
 }
 
 
 int		main(void)
 {
-	char	*name = "Enzo le plus beau";
-	
-	ft_printf("int test = %i\n", -1);
-	printf("original printf = %i\n",-1);
+	// ft_printf("%i", -1);
+	// printf("\n");
+	// printf("%i\n",-1);
+	ft_printf("(Y9Lk%i`h1X.(U%d*,"%c%u6"%xr.i!No*8z%pJ!h\v%sNzxXX%uC_Ok\v\rD", 1826227172, 457743330, -1280881534, -1306065819, 
+37642916, (void *)849345852295461385, "'fc^`.r", -1112964109);
+	printf("\n=========================\n");
+	printf("(Y9Lk%i`h1X.(U%d*,"%c%u6"%xr.i!No*8z%pJ!h\v%sNzxXX%uC_Ok\v\rD", 1826227172, 457743330, -1280881534, -1306065819, 
+37642916, (void *)849345852295461385, "'fc^`.r", -1112964109);
 	/*
+	char	*name = "Enzo le plus beau";
+
 	ft_printf("salut %s, ca roule comme tu veux?\n", name);
 	ft_printf("hexa test %x\n", 42);
 	ft_printf("ptr test = %p\n", name);
